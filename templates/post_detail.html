@@ -1,0 +1,99 @@
+
+ {% extends 'base.html' %}
+
+{% load staticfiles %} 
+
+
+
+
+
+{% block jumbotron %}
+
+<style>
+{% block style %}
+.jumbotron {
+     background-color:#43C360;
+     color: #FFF;
+}
+{% endblock %}
+</style>
+      <div class="jumbotron">
+
+    
+        {% if stock %}
+        <h1 style="color:blue;">{{ stock_name }}</h1>
+            {% if stocks_details %}
+            <ul>
+                {% for finance in stocks_details %}
+                
+                 
+
+                 <table border="6">
+<tbody>
+<tr>
+
+</tr>
+
+<tr>
+<td><h3 style="color:black;">DATE</h3></td>
+
+<td><h4>{{ finance.stock_date}}</h4></td>
+</tr>
+<tr>
+<td><h3 style="color:blue;">OPEN</h3></td>
+<td><h4>{{ finance.stock_open}}</h4></td>
+
+</tr>
+<tr>
+<td><h3 style="color:blue;">CLOSE</h3></td>
+<td><h4>{{ finance.stock_close}}</h4></td>
+
+</tr>
+</tr>
+<tr>
+<td><h3 style="color:blue;">% Change</h3></td>
+<td><h4>{{ finance.saves}}</h4></td>
+
+</tr>
+</tbody>
+</table>
+
+
+                {% endfor %}
+            </ul>
+            {% else %}
+                <strong>No pages currently in category.</strong>
+            {% endif %}
+        {% else %}
+            The specified category {{ stock_name }} does not exist!
+        {% endif %}
+
+
+<h3 style="color:red;">Top 5 volume</h3>
+ {% for post in top %}
+            <div>
+
+
+               
+   <table border="2">
+<tbody>
+<tr>
+
+</tr>
+
+<tr>
+<td><h3 style="color:black;">DATE</h3></td>
+<td><h2>{{ post.stock_date}}</h2></td>
+</tr>
+
+<tr>
+<td><h3 style="color:black;">VOLUME</h3></td>
+<td><h2>{{ post.stock_volume}}</h2></td>
+</tr>
+</tbody>
+</table>
+{% endfor %}
+   {% endblock %}-->
+
+     
+

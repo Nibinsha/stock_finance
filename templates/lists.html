@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+
+{% load staticfiles %} 
+
+{% block jumbotron %}
+
+<style>
+{% block style %}
+.jumbotron {
+     background-color:#43C360;
+     color: #FFF;
+}
+{% endblock %}
+</style>
+      <div class="jumbotron">
+        <div class = 'row'>
+            <div class = 'col-sm-6'>
+         
+    <div>
+            <h1><a href="/">STOCK HOME</a></h1>
+        </div>
+
+        {% for post in posts %}
+            <div>
+                 
+<table border="2">
+<tbody>
+<tr>
+<h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.name }}</h2>
+</tr>
+</tbody>
+</table>
+                
+       </a>
+            </div>
+        {% endfor %}
+
+
+</div>
+      </div>
+{% endblock %}
+
+
+     
+

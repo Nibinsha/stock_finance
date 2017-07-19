@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+
+{% load staticfiles %} <!-- New line -->
+
+
+
+
+
+{% block jumbotron %}
+
+<style>
+{% block style %}
+.jumbotron {
+     background-color:#43C360;
+     color: #FFF;
+}
+{% endblock %}
+</style>
+      <div class="jumbotron">
+        <div class = 'row'>
+            <div class = 'col-sm-6'>
+         {% for post in top %}
+            <div>
+
+
+               
+   <table border="2">
+<tbody>
+<tr>
+<h2 style="color:blue;">{{ post.stock_id}}</h2>
+</tr>
+
+<tr>
+<td><h3 style="color:black;">DATE</h3></td>
+<td><h2>{{ post.stock_date}}</h2></td>
+</tr>
+
+<tr>
+<td><h3 style="color:black;">VOLUME</h3></td>
+<td><h2>{{ post.stock_volume}}</h2></td>
+</tr>
+</tbody>
+</table>
+
+                
+                
+            </div>
+        {% endfor %}
+
+
+</div>
+      </div>
+{% endblock %}
+
+
+     
+

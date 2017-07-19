@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+
+{% load staticfiles %} <!-- New line -->
+
+
+
+
+
+{% block jumbotron %}
+
+<style>
+{% block style %}
+.jumbotron {
+     background-color:#43C360;
+     color: #FFF;
+}
+{% endblock %}
+</style>
+      <div class="jumbotron">
+        <div class = 'row'>
+            <div class = 'col-sm-6'>
+        <h1>Google Finance</h1>
+                <p>The service features business and enterprise headlines for many corporations including their financial decisions and major news events.</p>
+        
+      <div class='col-sm-6' >
+          <img src="{% static "finance.png" %}" alt="Mountain View" style="width:580px;height:300px;" align="middle">
+          
+     </div>
+</div>
+      </div>
+{% endblock %}
+{% block content %}
+
+
+            <li><a class="btn btn-lg btn-primary" href="/lists/" role="button">LISTS</a></li>
+          
+
+{% endblock %}
+
+
+     
+
